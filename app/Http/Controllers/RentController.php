@@ -8,7 +8,7 @@ use App\Models\Rent;
 class RentController extends Controller
 {
     public function getRents(){
-        $kolcsonzesek = Rent::all();
+        $kolcsonzesek = Rent::all()->load('car');
         return response()->json($kolcsonzesek);
     }
 
@@ -23,8 +23,8 @@ class RentController extends Controller
         Rent::create([
             "email"=>$request->email,
             "car_id"=>$request->car_id,
-            "rent_start"=>$request->rent_start,
-            "rent_end"=>$request->rent_end,
+            "rent_start"=>$request->kezdet,
+            "rent_end"=>$request->vege,
             "km"=>50,
             "all_price"=>10000
 

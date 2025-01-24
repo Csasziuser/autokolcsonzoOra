@@ -33,7 +33,7 @@
     <div class="form-floating mb-3">
         <select name="" id="" class="form-select" v-model="selectedAuto">
             <option v-for="(auto,index) in autok" :value="auto.id" >
-                {{ auto.modell }}
+                {{ auto.car_model }}
             </option>
         </select>
         <label for="floatingInput">Autó</label>

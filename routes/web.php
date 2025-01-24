@@ -5,9 +5,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\RentController;
+
 
 Route::get('/', function () {
-    return Inertia::render('Welcome',);
+    return Inertia::render('App');
 });
 
 Route::get('/dashboard', function () {
@@ -23,7 +25,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/api/car/index', [CarController::class, 'getCar' ]);
 Route::post('/api/car/save', [CarController::class, 'store']);
 
-Route::get('/api/rent/index', [RentController::class, 'getRent' ]);
+Route::get('/api/rent/index', [RentController::class, 'getRents' ]);
 Route::post('/api/rent/save', [RentController::class, 'store']);
 
 require __DIR__.'/auth.php';

@@ -26,6 +26,7 @@
     try {
       const response = await axios.get('/api/car/index');
       autok.value = response.data;
+      console.log(autok.value);
     } catch (error) {
       console.log(error);
     }
@@ -34,6 +35,8 @@
     try {
       const response = await axios.get('/api/rent/index');
       kolcsonzesek.value = response.data;
+      console.log(kolcsonzesek.value);
+      
     } catch (error) {
       console.log(error);
     }
