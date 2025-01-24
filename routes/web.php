@@ -23,4 +23,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/api/car/index', [CarController::class, 'getCar' ]);
 Route::post('/api/car/save', [CarController::class, 'store']);
 
+Route::get('/api/rent/index', [RentController::class, 'getRent' ]);
+Route::post('/api/rent/save', [RentController::class, 'store']);
+
 require __DIR__.'/auth.php';
